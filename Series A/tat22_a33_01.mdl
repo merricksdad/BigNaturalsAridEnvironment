@@ -1,10 +1,10 @@
-# Exported from NWmax 0.8 b60 at 2/5/2022 8:28:49 PM
+# Exported from NWmax 0.8 b60 at 2/6/2022 12:48:13 PM
 # mdl file
 #
 #NWmax MODEL ASCII
 # model: tat22_a33_01
-#local file: C:\gmax\Scenes\Tilesets\2022 Stonelands DS-EE\Athas Series A -- Desert Sands and Dunes 31.gmax
-filedependancy Athas Series A -- Desert Sands and Dunes 31.gmax
+#local file: C:\gmax\Scenes\Tilesets\2022 Stonelands DS-EE\Athas Series A -- Desert Sands and Dunes 33.gmax
+filedependancy Athas Series A -- Desert Sands and Dunes 33.gmax
 newmodel tat22_a33_01
 setsupermodel tat22_a33_01 NULL
 classification Tile
