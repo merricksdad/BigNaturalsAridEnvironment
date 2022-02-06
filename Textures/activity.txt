@@ -1,0 +1,1 @@
+Added textures for Series A and some additional decal textures not actually used on main Series A tiles
