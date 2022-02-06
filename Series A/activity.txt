@@ -1,1 +1,2 @@
 Added Series A models for storage
+Updated Series A models to have better decal z position.
