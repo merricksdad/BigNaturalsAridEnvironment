@@ -1,0 +1,64 @@
+# Exported from NWmax 0.8 b60 at 2/25/2022 10:34:36 AM
+# wok file
+#
+#NWmax WALKMESH  ASCII
+beginwalkmeshgeom tat22_h03_01
+node aabb WM_tat22_g03_02
+  parent tat22_h03_01
+  position 0.0 0.0 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.0 0.752941 0.0 
+  render 0
+  shadow 0
+  multimaterial 21
+    Dirt
+    Obscuring
+    Grass
+    Stone
+    Wood
+    Water
+    Nonwalk
+    Transparent
+    Carpet
+    Metal
+    Puddles
+    Swamp
+    Mud
+    Leaves
+    Lava
+    BottomlessPit
+    DeepWater
+    Door
+    Snow
+    Sand
+    BareBones
+  ambient 0.0 0.0 0.0 
+  diffuse 0.937255 0.941177 0.564706 
+  specular 0.0 0.0 0.0 
+  shininess 10.0
+  bitmap Sand
+  verts 4
+    -5.0 -5.0 0.0
+    -5.0 5.0 0.0
+    5.0 5.0 0.0
+    5.0 -5.0 0.0
+  faces 2
+    1 0 2  1  1 0 2  20
+    3 2 0  1  4 5 3  20
+  tverts 6
+    3.71821 0.82 0
+    3.7462 1.0 0
+    4.0 1.0 0
+    1.2992 0.3002 0
+    1.499 0.3002 0
+    1.499 0.5 0
+  normals 4
+    0.0 0.0 1.0
+    0.0 0.0 1.0
+    0.0 0.0 1.0
+    0.0 0.0 1.0
+    aabb         -5.0 -5.0 0.0 5.0 5.0 0.0 -1
+        -5.0 -5.0 0.0 5.0 5.0 0.0 0
+        -5.0 -5.0 0.0 5.0 5.0 0.0 1
+endnode
+endwalkmeshgeom tat22_h03_01

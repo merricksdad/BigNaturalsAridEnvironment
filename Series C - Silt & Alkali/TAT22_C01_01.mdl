@@ -1,10 +1,10 @@
-# Exported from NWmax 0.8 b60 at 2/6/2022 8:52:33 PM
+# Exported from NWmax 0.8 b60 at 2/7/2022 11:38:47 AM
 # mdl file
 #
 #NWmax MODEL ASCII
 # model: tat22_c01_01
-#local file: C:\gmax\Scenes\Tilesets\2022 Stonelands DS-EE\Athas Series B, C, F -- Salt, Silt, Sulfur, Alkali, Saltmarsh, Mudpots 12.gmax
-filedependancy Athas Series B, C, F -- Salt, Silt, Sulfur, Alkali, Saltmarsh, Mudpots 12.gmax
+#local file: C:\gmax\Scenes\Tilesets\2022 Stonelands DS-EE\Athas Series B, C, F -- Salt, Silt, Sulfur, Alkali, Saltmarsh, Mudpots 33.gmax
+filedependancy Athas Series B, C, F -- Salt, Silt, Sulfur, Alkali, Saltmarsh, Mudpots 33.gmax
 newmodel tat22_c01_01
 setsupermodel tat22_c01_01 NULL
 classification Tile
