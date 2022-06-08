@@ -1,0 +1,79 @@
+//=============================================================================
+//
+// fs3AxisSimp2 for Yellow Canyon
+// 
+// A three axis shader using two textures to blend cube-wrapped edges
+// in worldspace.
+//
+//=============================================================================
+
+//******************************************
+//   BEGIN Three Axis Shader Guts (do not change)
+//******************************************
+
+#define SHADER_TYPE 2
+
+#define FOG 1
+#define KEYHOLING 1
+#define LIGHTING 1
+
+#define NORMAL_MAP 1
+#define SPECULAR_MAP 1
+#define ROUGHNESS_MAP 1
+#define HEIGHT_MAP 1
+#define SELF_ILLUMINATION_MAP 1
+#define ENVIRONMENT_MAP 0
+
+#define NUM_TEXTURES 2
+
+#include "inc_standard"
+#include "inc_3axisSimp"
+
+//******************************************
+//   END Three Axis Shader Guts
+//******************************************
+
+void main ()
+{
+	//******************************************
+	//   BEGIN Three Axis Shader Options
+	//******************************************
+		
+	//vector x will be used for the xy plane scale
+	//while vector y will be used for the z scale
+	vTextureCubeSize = vec2(5.0,2.5);
+	
+	//allows the top texture to take over more of the vertical faces
+	//prefers negative values
+	//approximately 1% == 0.01
+	//default value 0.0....suggested value 0.25
+	fTopBias = 0.0;
+	
+	//allows cutting off the smallest mixing of any texture
+	//similar to blending punchthrough for decals
+	//remaining mixing factor will be pinched out based on your choice of Min Mixing Mode (below)
+	fMinMixing = 0.0;
+	
+	//change the mode for minimum mixing
+	//0 == sharp (may cause black patches when fMinMixing > 0.66)
+	//1 == hard fade
+	bMinMixingMode = 1;
+	
+	//enable/disable RGB axial painting to debug orientation
+	//0 == off
+	//1 == material painting
+	//2 == world direction painting
+	//3 == vertex normal painting
+	//4 == fragment normal painting
+	bUseTestingColors = 0;
+
+	//******************************************
+	//   END Three Axis Shader Props
+	//******************************************
+
+    FragmentColor = vec4(1.0);
+	SetupThreeAxisShaderInputs();
+    ApplySpecialShader();
+	
+    gl_FragColor = FragmentColor;
+}

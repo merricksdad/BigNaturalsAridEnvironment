@@ -1,9 +1,0 @@
- customshadervs vslitc_nm
- customshaderfs fsDecal
- renderhint NormalAndSpecMapped
- texture0 tat22_dirt06
- texture1 tat22_dirt06_n
- texture2 tat22_sand02_s
- texture3 tat22_sand02_r
- texture4 tat22_sand02_h
- 

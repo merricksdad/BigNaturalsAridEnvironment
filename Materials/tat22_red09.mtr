@@ -1,0 +1,15 @@
+ customshadervs vs3AxisSimp
+ customshaderfs fsRedCanyon
+ renderhint NormalAndSpecMapped
+ texture0 tat22_red09
+ texture1 tat22_red09_n
+ texture2 tat22_red09_s
+ texture3 tat22_red09_r
+ texture4 tat22_red09_h
+ texture5 null
+ texture6 tat22_sstn44
+ texture7 tat22_sstn44_n
+ texture8 tat22_sstn44_s
+ texture9 tat22_sstn44_r
+ texture10 tat22_sstn44_h
+ texture11 null

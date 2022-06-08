@@ -3,6 +3,12 @@
 // fsFoliage.shd
 // based on fslit_nm.shd
 //
+
+/*
+	This foliage shader removes white lines due to fresnel glare around textures,
+	allows backfaces to be lit at 100% light value, 
+	and rewrites decal punchthrough blending.
+*/
 //=============================================================================
 
 #define SHADER_TYPE 2
@@ -399,12 +405,14 @@ void ComputeLightingEx(inout vec4 ColorIO, vec3 vNormalThis)
 			#if SHADER_QUALITY_MODE >= 1
 				// Transparency is reduced with angle as light will be reflected when passing from one medium to another. 
 				// This here is a naive implementation.
-				ColorIO.a = mix(GetFresnelSpecularity(ColorIO.a, fNdotV), ColorIO.a, fRoughness);			
+				
+				//removed by Merricksdad. Does not apply to decals and foliage
+				//ColorIO.a = mix(GetFresnelSpecularity(ColorIO.a, fNdotV), ColorIO.a, fRoughness);			
 			#endif
 			// Specularity ignores material transparency. We emulate this by compensating.
-			SpecularLight /= max(ColorIO.a, 0.1);
+			//removed by Merricksdad. Does not apply to decals and foliage
+			//SpecularLight /= max(ColorIO.a, 0.1);
 		}
-
 		ColorIO.rgb += SpecularColor * SpecularLight;
 		
 	#endif
@@ -507,12 +515,13 @@ void ApplyFoliageShader()
 void main ()
 {
     FragmentColor = vec4(1.0);
-	fBacklitStrength = 0.75; //<--change this to force how much light comes through
+	fBacklitStrength = 0.8; //<--change this to force how much light comes through
  	SetupStandardShaderInputs();
     ApplyFoliageShader();
 	#if PUNCHTHROUGH == 1
 		//if you want the punchthrough effect, this is where you can reprogram the math
 		FragmentColor.a = 0.75*(FragmentColor.a/FragmentColor.a) + 0.25*FragmentColor.a;
+		//FragmentColor.rgb *= FragmentColor.a;
 	#endif
     gl_FragColor = FragmentColor;
 }

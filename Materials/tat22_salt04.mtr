@@ -1,0 +1,8 @@
+ customshadervs vslitc_nm
+ customshaderfs fsTrim
+ renderhint NormalAndSpecMapped
+ texture0 tat22_salt04
+ texture1 tat22_salt04_n
+ texture2 tat22_salt04_s
+ texture3 tat22_salt04_r
+ texture4 tat22_salt04_h

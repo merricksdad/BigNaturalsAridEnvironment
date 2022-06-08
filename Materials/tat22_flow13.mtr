@@ -1,0 +1,5 @@
+customshadervs vslitc_nm
+customshaderfs fsFoliage
+renderhint NormalAndSpecMapped
+texture2 tat22_gray16
+texture3 tat22_gray192

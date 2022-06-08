@@ -1,0 +1,16 @@
+ customshadervs vs3AxisSimp
+ customshaderfs tat22_pinemntn
+ renderhint NormalAndSpecMapped
+ ## was texture0 tat22_gras26
+ texture0 tat22_gras41
+ texture1 tat22_rock22_n
+ texture2 tat22_rock22_s
+ texture3 tat22_rock22_r
+ texture4 tat22_rock22_h
+ texture5 null
+ texture6 tat22_rock22
+ texture7 tat22_rock22_n
+ texture8 tat22_rock22_s
+ texture9 tat22_rock22_r
+ texture10 tat22_rock22_h
+ texture11 null

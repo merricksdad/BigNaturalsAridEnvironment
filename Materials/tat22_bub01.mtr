@@ -1,0 +1,7 @@
+customshadervs vslitc_nm
+customshaderfs fsSlide
+renderhint NormalAndSpecMapped
+texture1 tat22_bub01_n
+texture2 tat22_bub01_s
+texture3 tat22_bub01_r
+texture4 tat22_bub01_h

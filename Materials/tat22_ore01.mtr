@@ -1,0 +1,10 @@
+ customshadervs vslitc_sm_nm
+ customshaderfs fslit_sm_nm
+ renderhint NormalAndSpecMapped
+ texture0 tat22_ore01
+ texture1 tat22_ore01_n
+ texture2 tat22_ore01_s
+ texture3 tat22_ore01_r
+ texture4 tat22_ore01_h
+ texture15 tat22_env01
+ 

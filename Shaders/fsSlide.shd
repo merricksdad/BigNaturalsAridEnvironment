@@ -11,18 +11,32 @@
 #define KEYHOLING 1
 #define LIGHTING 1
 
+//all values are set to 1 which will ALLOW them to be used
+//but internal checks will determine if they exist or not
 #define NORMAL_MAP 1
 #define SPECULAR_MAP 1
 #define ROUGHNESS_MAP 1
-#define HEIGHT_MAP 0
-#define SELF_ILLUMINATION_MAP 0
+#define HEIGHT_MAP 1
+#define SELF_ILLUMINATION_MAP 1
 #define ENVIRONMENT_MAP 0
+
+#define SLIDE_ALPHA 0
 
 #include "inc_standard"
 
 uniform int worldtimerTimeOfDay;
+	
+//What direction in UV coordinates will the texture slide
+//This value will be imported from the MTR file or modified by SetMaterialShaderUniformVec4
+uniform vec4 vSlide;
 
-void SetupSlidingShaderInputs(vec2 vOffset)
+//OR pass in two int parameters like this
+//uniform int iSlideX;
+//uniform int iSlideY;
+
+vec2 vOrigCoords;
+		
+void SetupSlidingShaderInputs()
 {
 	#if LIGHTING == 1
 		FragmentColor.a *= materialFrontDiffuse.a;
@@ -50,7 +64,10 @@ void SetupSlidingShaderInputs(vec2 vOffset)
 
 		vec4 MainTextureColor;
 			
-		vTexCoords = vVertexTexCoords.xy + vOffset;
+		float fTick = worldtimerTimeOfDay/1000.0;
+		vTexCoords = vVertexTexCoords.xy - (fTick * vSlide.xy);
+		//vTexCoords = vVertexTexCoords.xy - (fTick * vec2(iSlideX/10.0, iSlideY/10.0));
+		
 		// Setup tangent space basis.
 		#if NORMAL_MAP == 1 || HEIGHT_MAP == 1
 
@@ -98,6 +115,9 @@ void SetupSlidingShaderInputs(vec2 vOffset)
 		else
 		{
 			MainTextureColor = texture2D(texUnit0,vTexCoords.xy);
+			#if SLIDE_ALPHA == 0
+			MainTextureColor.a = texture2D(texUnit0, vOrigCoords.xy).a;
+			#endif
 		
 			#if ENVIRONMENT_MAP == 1
 
@@ -144,6 +164,7 @@ void SetupSlidingShaderInputs(vec2 vOffset)
 			#endif
 
 			FragmentColor.rgb *= MainTextureColor.rgb;
+
 		
 		#else
 
@@ -172,19 +193,9 @@ void SetupSlidingShaderInputs(vec2 vOffset)
 
 void main ()
 {
-	
-	//what direction in UV coordinates will the texture slide
-	vec2 vSlideDir = vec2(0,1);
-	
-	//what speed will the UV slide per second
-	float fSlideSpeed = 0.1;
-	
-	//process texture coordinates here
-	float fTick = (worldtimerTimeOfDay/(1000.0));
-	vec2 vOffset = (fTick * fSlideSpeed * vSlideDir);
-
     FragmentColor = vec4(1.0);
- 	SetupSlidingShaderInputs(vOffset);
+ 	vOrigCoords = vec2(vVertexTexCoords.xy);
+	SetupSlidingShaderInputs();
     ApplyStandardShader();
     gl_FragColor = FragmentColor;
 }

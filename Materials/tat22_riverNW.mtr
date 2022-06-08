@@ -1,0 +1,19 @@
+ customshadervs vslitc_nm
+ customshaderfs fsFlowmap
+ ##customshaderfs fsSlide
+ renderhint NormalAndSpecMapped
+ texture0 tat22_river01
+ texture1 tat22_river01_n
+ ##texture2 tat22_river01_s
+ ##texture3 tat22_river01_r
+ texture4 tat22_river01_h
+ #texture5 tat22_river01_i
+ texture6 tat22_flowNW
+ 
+ ##override the flow speed of the shader here
+ parameter float fSlideSpeed 2.0
+ 
+ ##Set the specular and roughness here
+ parameter float Specularity 0.3
+ parameter float Roughness 0.1
+ 

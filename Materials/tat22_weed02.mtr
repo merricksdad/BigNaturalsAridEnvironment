@@ -1,0 +1,6 @@
+customshadervs vslitc_nm
+customshaderfs fsFoliage
+renderhint NormalAndSpecMapped
+#texture1 tat22_weed02_n
+#texture2 tat22_weed02_s
+#texture3 tat22_weed02_r
