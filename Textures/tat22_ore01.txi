@@ -1,1 +1,0 @@
-EnvMapTexture tat22_env01
